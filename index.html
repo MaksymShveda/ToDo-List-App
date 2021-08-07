@@ -4,9 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Hahmlet&display=swap" rel="stylesheet">
     <title>Todo List</title>
 </head>
 <body>
+    <div id="app-container">
+        <h1 class="description-text">Your<br>own<br>task<br>manager</h1>
+        <form id="task-creator">
+            <input type="text" id="task-name-input" placeholder="Write Your Task Here...">
+            <button type="submit" id="submit-button">Create</button>
+        </form>
+        <ul id="tasks-box">
+            <li class="task">
+                Write own ToDo App
+                <button class="edit-button">
+                    <img class="task-manage-image" src="images/edit-icon.svg" alt="Edit Task"/>
+                </button>
+                <button class="delete-button">
+                    <img src="images/delete-icon.svg" alt="Delete Task">
+                </button>
+            </li>
+        </ul>
+    </div>
     <script src="js/script.js"></script>
 </body>
 </html>
+
+
+
