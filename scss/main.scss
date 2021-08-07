@@ -2,4 +2,74 @@
 
 *{
   font-family: $hahmlet;
+  padding:0;
+  margin:0;
+}
+
+body{
+    background-color: $background;
+}
+
+#app-container{
+    display: flex;
+    flex-direction: column;
+    
+}
+.description-text{
+    color: $description-text;
+    text-align: center;
+}
+#task-creator{
+    display: flex;
+    justify-content: center;
+}
+#task-name-input{
+    width: 500px;
+    height: 50px;
+    border-radius: 5px;
+    background-color: $alt-background;
+    font-size: $xl;
+    box-sizing: border-box;
+    margin-right: 10px;
+    border: none
+}
+#task-name-input:focus{
+    outline: none;
+}
+#submit-button{
+    width: 100px;
+    height:50px;
+    box-sizing: border-box;
+    font-size: $l;
+    border-radius: 5px;
+    border:none
+}
+#tasks-box{
+    display: flex;
+    flex-direction: column;
+}
+.task{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.task-text{
+    color:$tasks-text;
+    margin-right: 20px;
+    font-size: $xl;
+    text-decoration: none;
+}
+.edit-button, .delete-button{
+    background-color: $tools-inactive;
+    width:48px;
+    height:48px;
+    border: none;
+    border-radius: 30px;
+}
+button:hover{
+    background-color: $tools-active;
+}
+.task-manage-image{
+    width:40px;
+    height:40px;
 }
