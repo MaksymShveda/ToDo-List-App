@@ -59,12 +59,31 @@ body{
     font-size: $xl;
     text-decoration: none;
 }
+.request-input{
+    width:150px;
+    height:30px;
+    border: none;
+    border-radius:5px;
+    background-color: #ecf3f5;
+  }
+
+.confirm-edit-button{
+    background-color: $tools-inactive;
+    width:48px;
+    height:48px;
+    border: none;
+    border-radius: 30px;
+}
+
 .edit-button, .delete-button{
     background-color: $tools-inactive;
     width:48px;
     height:48px;
     border: none;
     border-radius: 30px;
+}
+.edit-button{
+
 }
 button:hover{
     background-color: $tools-active;
