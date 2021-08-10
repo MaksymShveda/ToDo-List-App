@@ -100,6 +100,7 @@ function renderTasks(tasks){
 function requestForEdit(taskToEdit){
     //Creating a form for edit;
     let editForm = document.createElement("form");
+    editForm.className = "request-form";
     let requestInput = document.createElement("input");
     requestInput.type = "text";
     requestInput.className = "request-input";
@@ -108,6 +109,10 @@ function requestForEdit(taskToEdit){
     let confirmEdit = document.createElement("button");
     confirmEdit.type = "submit";
     confirmEdit.className = "confirm-edit-button";
+    let confirmIcon = document.createElement("img");
+    confirmIcon.className = "task-manage-image";
+    confirmIcon.setAttribute("src", "images/confirm-icon.svg");
+    confirmEdit.appendChild(confirmIcon);
     editForm.appendChild(confirmEdit);
     //Displaying input and confirm button;
     taskToEdit.style.display="none";

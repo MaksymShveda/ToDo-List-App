@@ -1,7 +1,6 @@
 @import './base/core';
 
 *{
-  font-family: $hahmlet;
   padding:0;
   margin:0;
 }
@@ -13,17 +12,22 @@ body{
 #app-container{
     display: flex;
     flex-direction: column;
-    
+    align-items: center;
 }
 .description-text{
     color: $description-text;
     text-align: center;
+    font-family: $hahmlet;
+    margin-bottom: 50px;
+    text-shadow:0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 #task-creator{
     display: flex;
     justify-content: center;
+    margin-bottom: 20px;
 }
 #task-name-input{
+    color:$tasks-text;
     width: 500px;
     height: 50px;
     border-radius: 5px;
@@ -31,7 +35,9 @@ body{
     font-size: $xl;
     box-sizing: border-box;
     margin-right: 10px;
-    border: none
+    border: none;
+    font-family: $hahmlet;
+   box-shadow:  0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 #task-name-input:focus{
     outline: none;
@@ -42,53 +48,81 @@ body{
     box-sizing: border-box;
     font-size: $l;
     border-radius: 5px;
-    border:none
+    border:none;
+    box-shadow:0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    font-family: $hahmlet;
+    font-size: $xl;
 }
 #tasks-box{
     display: flex;
     flex-direction: column;
+    width: 610px;
+    background-color: $alt-background;
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);;
 }
 .task{
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    height: 40px;
+
 }
+.checkbox{
+  height: 20px;
+  width: 20px;
+  margin: 0 20px;
+  border: 2px solid #3498db;
+  border-radius: 2px;
+  cursor: pointer;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);;
+}
+
 .task-text{
     color:$tasks-text;
-    margin-right: 20px;
-    font-size: $xl;
+    margin: 0px 36px 0px 36px;
+    font-size: $xxl;
     text-decoration: none;
+    text-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    font-family: $hahmlet;
+    width:400px;
+}
+.request-form{
+    display:flex;
+    align-items: center;
+    width: 502px;
 }
 .request-input{
-    width:150px;
+    width:400px;
     height:30px;
     border: none;
     border-radius:5px;
-    background-color: #ecf3f5;
+    background-color: $request-input;
+    margin: 0px 36px 0px 36px;
+    color: $tasks-text;
+    font-size: $xxl;
+    font-family: $hahmlet;
   }
-
-.confirm-edit-button{
-    background-color: $tools-inactive;
-    width:48px;
-    height:48px;
-    border: none;
-    border-radius: 30px;
+.request-input:focus{
+    outline: none;
 }
-
-.edit-button, .delete-button{
-    background-color: $tools-inactive;
-    width:48px;
-    height:48px;
-    border: none;
-    border-radius: 30px;
+.edit-button, .delete-button, .confirm-edit-button{
+    background-color: #F0F8FF;
+    width:30px;
+    height:30px;
+    border:none;
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);;
+    
 }
-.edit-button{
-
+.delete-button{
+    margin-left:12px;
 }
 button:hover{
     background-color: $tools-active;
 }
 .task-manage-image{
-    width:40px;
-    height:40px;
+    width:20px;
+    height:20px;
 }
