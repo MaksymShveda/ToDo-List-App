@@ -1,15 +1,10 @@
-"use strict";
 //Declare part;
 let taskCreationForm = document.getElementById("task-creator");
 let taskCreationInput = document.getElementById("task-name-input");
 let taskList = document.getElementById("tasks-box");
-let tasks = [{
-    id: 1239124919,
-    name: "Write own ToDo App",
-    done: false
-}];
+let tasks =[];
 
-getFromLocalStorage(tasks);
+tasksFromLocalStorage(tasks);
 
 //Functions;
 //Creating a new task;
@@ -18,7 +13,7 @@ taskCreationForm.addEventListener("submit", function(event){
     addTask(taskCreationInput.value);
 
 })
-
+//add a task to data and page
 function addTask(task){
     if(task != ""){
         let newTask = {
@@ -27,14 +22,14 @@ function addTask(task){
             done: false
         };
         tasks.push(newTask);
-        addToLocalStorage(tasks);
+        localStorageUpdate(tasks);
         
         taskCreationInput.value = "";
         console.log(tasks);
     }
 }
 
-function renderTasks(tasks){
+function refreshTasksList(tasks){
     //clear page
     while(taskList.firstChild){
         taskList.firstChild.remove();
@@ -79,7 +74,12 @@ function renderTasks(tasks){
             //collecting edited task;
             newEdit.addEventListener("submit", function(event){
                 event.preventDefault();
+                if(newEdit.firstChild.value === ""){
+                    newEdit.firstChild.placeholder = "Please, write your task."
+                  }
+                else{
                 taskEdit(newEdit);
+                }
             })  
         })
     })
@@ -92,7 +92,7 @@ function renderTasks(tasks){
     let checkboxes = document.querySelectorAll(".checkbox");
     Array.from(checkboxes).forEach(function(cb){
         cb.addEventListener("click", function(){
-            toggle(cb.parentNode.getAttribute("data-key"));
+            taskSuccessProgress(cb.parentNode.getAttribute("data-key"));
         })
     })
 }
@@ -126,39 +126,38 @@ function taskEdit(changedTask){
     tasks.find(function(element){
     return element.id == changedTask.parentNode.getAttribute("data-key");
     }).name = changedTask.firstChild.value;
-    console.log(tasks);
-    addToLocalStorage(tasks);
+    localStorageUpdate(tasks);
     //giving an initial look
 changedTask.nextElementSibling.textContent = changedTask.firstChild.value;
 changedTask.nextElementSibling.style.display = "block";
 changedTask.nextElementSibling.nextElementSibling.style.display = "block";
 changedTask.remove();
 }
-//making a task done
-function toggle(id){
+//making a task done/undone
+function taskSuccessProgress(id){
     tasks.forEach(function(element){
         if(element.id == id){
             element.done = !element.done;
         }
     })
-    addToLocalStorage(tasks);
+    localStorageUpdate(tasks);
 }
 //Delete task
 function deleteTask(id){
   tasks = tasks.filter((element)=>element.id != id);
-    addToLocalStorage(tasks);
+    localStorageUpdate(tasks);
 }
 
 //Local Storage
-function addToLocalStorage(list){
+function localStorageUpdate(list){
     localStorage.setItem("tasks", JSON.stringify(list));
-    renderTasks(list);
+    refreshTasksList(list);
 }
 
-function getFromLocalStorage(){
+function tasksFromLocalStorage(){
     let reference = localStorage.getItem("tasks");
     if(reference){
         tasks = JSON.parse(reference);
-        renderTasks(tasks);
+        refreshTasksList(tasks);
     }
 }   

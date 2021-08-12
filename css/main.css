@@ -3,7 +3,7 @@
   margin: 0; }
 
 body {
-  background-color: #82b21e; }
+  background-color: #bbcfd7; }
 
 #app-container {
   display: flex;
@@ -11,7 +11,7 @@ body {
   align-items: center; }
 
 .description-text {
-  color: #d6f58e;
+  color: #646363;
   text-align: center;
   font-family: "Hahmlet", serif;
   margin-bottom: 50px;
@@ -23,20 +23,26 @@ body {
   margin-bottom: 20px; }
 
 #task-name-input {
-  color: #63a91f;
+  color: #625f5e;
   width: 500px;
   height: 50px;
   border-radius: 5px;
-  background-color: #d6f58e;
+  background-color: #a3c0c5;
   font-size: 18px;
   box-sizing: border-box;
   margin-right: 10px;
   border: none;
   font-family: "Hahmlet", serif;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  padding-left: 20px; }
 
 #task-name-input:focus {
   outline: none; }
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
 
 #submit-button {
   width: 100px;
@@ -53,7 +59,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 610px;
-  background-color: #d6f58e;
+  background-color: #a3c0c5;
   border-radius: 10px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
 
@@ -74,7 +80,7 @@ body {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
 
 .task-text {
-  color: #63a91f;
+  color: #625f5e;
   margin: 0px 36px 0px 36px;
   font-size: 20px;
   text-decoration: none;
@@ -92,11 +98,16 @@ body {
   height: 30px;
   border: none;
   border-radius: 5px;
-  background-color: #9cbd4e;
-  margin: 0px 36px 0px 36px;
-  color: #63a91f;
+  background-color: white;
+  margin: 0px 36px 0px 16px;
+  padding-left: 20px;
+  color: #625f5e;
   font-size: 20px;
   font-family: "Hahmlet", serif; }
+
+.request-input::placeholder {
+  color: red;
+  opacity: 20; }
 
 .request-input:focus {
   outline: none; }
@@ -113,7 +124,7 @@ body {
   margin-left: 12px; }
 
 button:hover {
-  background-color: #5c8a03; }
+  background-color: #a19a90; }
 
 .task-manage-image {
   width: 20px;

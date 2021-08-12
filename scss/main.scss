@@ -26,6 +26,7 @@ body{
     justify-content: center;
     margin-bottom: 20px;
 }
+
 #task-name-input{
     color:$tasks-text;
     width: 500px;
@@ -38,9 +39,15 @@ body{
     border: none;
     font-family: $hahmlet;
    box-shadow:  0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+   padding-left: 20px;
 }
 #task-name-input:focus{
     outline: none;
+}
+button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 #submit-button{
     width: 100px;
@@ -99,11 +106,16 @@ body{
     border: none;
     border-radius:5px;
     background-color: $request-input;
-    margin: 0px 36px 0px 36px;
+    margin: 0px 36px 0px 16px;
+    padding-left: 20px;
     color: $tasks-text;
     font-size: $xxl;
     font-family: $hahmlet;
   }
+.request-input::placeholder{
+    color: red;
+    opacity: 20;
+}
 .request-input:focus{
     outline: none;
 }
